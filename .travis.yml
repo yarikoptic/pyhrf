@@ -31,6 +31,8 @@ before_install:
     - sed -i.bak  's/^backend.*/backend:Agg/'   matplotlibrc
 install:
     - python setup.py install --user
+    # Install PyYAML from Debian package available in precise since pip install fails
+    - if [ ! -z "$COVERAGE" ]; then sudo apt-get install $PY-yaml; fi
     - if [ ! -z "$COVERAGE" ]; then pip install --user -v coveralls; fi
 script:
     - export PATH=$HOME/.local/bin:$PATH
