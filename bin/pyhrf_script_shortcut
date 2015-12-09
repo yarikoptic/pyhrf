@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
@@ -82,7 +82,7 @@ def make_script(script_fn, pyhrf_script=''):
     if options.shell:
         content = 'python `pyhrf_src_path`/script/%s\n' % pyhrf_script
     else:
-        content = '#! /usr/bin/python\n'
+        content = '#! /usr/bin/env python\n'
         content += 'import pyhrf, os\n'\
             'execfile(os.path.join(pyhrf.get_src_path(),' \
             '"script/%s"))\n' % pyhrf_script

@@ -1,4 +1,4 @@
-#! /bin/env python
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from pyhrf.ui.treatment import run_pyhrf_cmd_treatment
